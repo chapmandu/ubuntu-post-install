@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Github Desktop
+function install_github_desktop {
+	wget https://github.com/shiftkey/desktop/releases/download/release-2.0.4-linux1/GitHubDesktop-linux-2.0.4-linux1.snap -O ~/Downloads/GitHubDesktop-linux-2.0.4-linux1.snap
+	snap remove github-desktop
+	snap install GitHubDesktop-linux-2.0.4-linux1.snap --classic --dangerous
+	rm ~/Downloads/GitHubDesktop-linux-2.0.4-linux1.snap
+	whiptail --title "Finished" --msgbox "Installation of GitHub Desktop complete." 8 56
+	install_thirdparty
+}

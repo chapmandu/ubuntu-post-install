@@ -1,0 +1,134 @@
+alias upgrade='sudo apt update && apt list --upgradable && sudo apt upgrade -y && sudo apt autoremove -y'
+
+# git shortcouts
+alias st='git status'
+alias pp='git pull --rebase && git push'
+alias sync='git sync'
+alias syncall='mas && sync && rel && sync && dev && sync'
+alias dif='git diff'
+alias mas='git checkout master'
+alias rel='git checkout release'
+alias dev='git checkout develop'
+alias prog='git add . && git commit -m "progress commit"'
+alias progp='prog && gp'
+alias undo='git reset --soft HEAD~1'
+
+# ohmyzsh git style aliases for bash
+alias gb="git --no-pager branch"
+# alias gco="git checkout"
+# alias gc="git commit -m"
+alias gcam="git add . && git commit -m"
+# alias gcp="git cherry-pick"
+# alias gl="git pull --rebase"
+# alias gp="git push"
+# alias gd="git diff"
+alias glog="git log --stat --max-count=20" # yes
+# alias glogg="git log --oneline --decorate --color --graph"
+# alias grhh="git reset HEAD --hard"
+alias gnb="git checkout -b"
+alias backmerge="syncall && rel && git merge master -m 'backmerge master into release' && sync && dev && git merge release -m 'backmerge release into develop' && sync"
+
+# git flow
+alias gfhs="git flow hotfix start"
+alias gfhf="git flow hotfix finish"
+alias gffs="git flow feature start"
+alias gfff="git flow feature finish"
+alias gfrs="git flow release start"
+alias gfrf="git flow release finish -k"
+
+# folder shortcuts
+alias alc='cd ~/www/alcatraz'
+alias zenu='cd ~/www/alcatraz/www/zenu'
+alias sub='cd ~/www/alcatraz/www/subzero'
+alias atl='cd ~/www/atlantis'
+alias val='cd ~/www/valyria'
+alias wes='cd ~/www/valyria/www/westeros'
+alias bra='cd ~/www/valyria/www/braavos'
+alias wheels='cd ~/www/atlantis/www/cfwheels'
+alias cfw='cd ~/www/atlantis/www/cfwheels'
+# switch vm
+alias westeros-reload='val && sync && vu && vp && wes && sync'
+alias zenu-reload='alc && sync && dcr && zenu && sync'
+alias start-all='westeros-reload && zenu-reload'
+alias launch-apps='firefox && code && slack && dbeaver && spotify && github-desktop && opera'
+
+# vagrant shortcuts
+alias vu='vagrant up'
+alias vd='vagrant destroy'
+alias vr='vagrant reload --provision'
+alias vp='vagrant provision'
+alias vssh='vagrant ssh'
+alias vs='vagrant suspend'
+alias vh='vagrant halt'
+
+# docker shortcuts
+alias dcu='docker-compose up -d --build --remove-orphans'
+alias dcuv='docker-compose up --build --remove-orphans' # verbose
+alias dcr='docker-compose restart'
+alias dcs='docker-compose stop'
+alias dcd='docker-compose down -v'
+alias dcrm='docker-compose rm -v'
+alias dc='docker-compose'
+dcssh() {
+  if [ "$1" == "zenu" ]; then
+    docker exec -it alcatraz_www.zenu.dv_1 /bin/bash
+  elif [ "$1" == "subzero" ]; then
+    docker exec -it alcatraz_www.subzero.dv_1 /bin/bash
+  else
+    echo "Unknown container '${1}', Use 'zenu' or 'subzero'"
+  fi
+}
+
+# python
+alias python='python3'
+alias pip='pip3'
+alias activate_venv='. venv/bin/activate'
+alias deactivate_venv='deactivate'
+alias pyinit='touch __init__.py'
+
+# aws sam
+alias sam-api-restart="sam build && sam local start-api --env-vars ../env.json"
+
+# zenu functional test shortcut
+# zsh
+runtests() {
+  if (( $# == 0 )) then
+    python3 tests/run_tests.py
+  else
+    python3 tests/run_tests.py -p $1
+  fi
+}
+
+# bash
+# runtests() {
+#   if [ $1 == "" ]; then
+#     python3 tests/run_tests.py
+#   else
+#     python3 tests/run_tests.py -p $1
+#   fi
+# }
+
+# utils
+alias ded="find . -depth -type d -empty -delete" # delete all empty directories under the current
+
+# cfformat
+alias converttocfm='rename "s/cfc/cfm/" *.cfc'
+alias converttocfc='rename "s/cfm/cfc/" *.cfm'
+cff() {
+  DIR=$(dirname "${1}")
+  FILENAME=$(basename -- "$1")
+  EXTENSION="${FILENAME##*.}"
+  FILENAME="${FILENAME%.*}"
+  if [ $EXTENSION = cfm ]; then
+    CFCPATH="${DIR}/${FILENAME}.cfc"
+    CFMPATH="${DIR}/${FILENAME}.cfm"
+    echo "rename ${FILENAME}.cfm to ${FILENAME}.cfc"
+    mv $CFMPATH $CFCPATH
+    echo "cfformatting..."
+    box cfformat $CFCPATH --overwrite
+    echo "rename ${FILENAME}.cfc back to ${FILENAME}.cfm"
+    mv $CFCPATH $CFMPATH
+  else
+    box cfformat $1 --overwrite
+  fi
+}

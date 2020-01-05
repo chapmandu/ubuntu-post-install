@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Git Legit
+function install_git_legit {
+	pip3 install legit
+	whiptail --title "Finished" --msgbox "Installation of Git Legit complete." 8 56
+	install_thirdparty
+}

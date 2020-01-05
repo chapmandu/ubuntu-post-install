@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# ohmyzsh
+function install_ohmyzsh {
+	sudo apt install zsh -y
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	install_thirdparty
+}
