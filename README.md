@@ -27,7 +27,7 @@ You use these scripts, you can just run the main script from the root of the sou
 
 Or run the bootstrapper:
 
-`sh -c "$(curl -fsSL https://gist.githubusercontent.com/chapmandu/c10c1ebca14a90dc8c31ca05f724d1a9/raw/9bc1f9d974410f6bbc7e5917223bbe93db9810f1/bootstrap.sh)"`
+`sh -c "$(curl -fsSL https://gist.githubusercontent.com/chapmandu/c10c1ebca14a90dc8c31ca05f724d1a9/raw/738eb597fb60bec41a5993df3526949ee2e7fbaf/bootstrap.sh)"`
 
 Alternatively, if you use `bash` and cloned this to your home folder, add the following to your `.bashrc` to run this script on-demand.
 
