@@ -30,17 +30,18 @@ function install_thirdparty {
 		--ok-button "Install" \
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
-		'install_chrome'           'Google Chrome' \
-		'install_commandbox'       'Commandbox' \
-		'install_dropbox'          'Dropbox' \
-		'install_git_legit'        'Git Legit' \
-		'install_github_desktop'   'GitHub Desktop' \
-		'install_nvm'              'Node Version Manager' \
-		'install_ohmyzsh'          'ohmyzsh' \
-		'install_vscode'           'Visual Studio Code' \
-		'install_oracle_java'      'Oracle Java' \
-		'install_rvm'              'Ruby Version Manager (RVM)' \
-		'install_sublime_text'     'Sublime Text 3' \
+		'install_chrome'               'Google Chrome' \
+		'install_commandbox'           'Commandbox' \
+		'install_dropbox'              'Dropbox' \
+		'install_elementary_tweaks'    'Elementary OS Tweaks' \
+		'install_git_legit'            'Git Legit' \
+		'install_github_desktop'       'GitHub Desktop' \
+		'install_nvm'                  'Node Version Manager' \
+		'install_ohmyzsh'              'ohmyzsh' \
+		'install_vscode'               'Visual Studio Code' \
+		'install_oracle_java'          'Oracle Java' \
+		'install_rvm'                  'Ruby Version Manager (RVM)' \
+		'install_sublime_text'         'Sublime Text 3' \
 		3>&1 1>&2 2>&3)
 
 	# check exit status

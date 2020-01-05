@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Elementary Tweaks
+function install_elementary_tweaks {
+	sudo add-apt-repository ppa:philip.scott/elementary-tweaks -y
+	sudo apt-get update
+	sudo apt-get install elementary-tweaks -y
+}
