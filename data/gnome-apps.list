@@ -1,7 +1,6 @@
 epiphany-browser
 gnome-calculator
 gnome-calendar
-gnome-characters
 gnome-clocks
 gnome-documents
 gnome-logs
@@ -9,4 +8,5 @@ gnome-screenshot
 gnome-software
 gnome-system-monitor
 gnome-terminal
+gnome-tweaks
 gnome-weather
