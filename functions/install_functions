@@ -185,7 +185,7 @@ function install_snap_package() {
 			# Install
 			echo_message info "Installing snap package '${2}'..."
 			# Admin privileges
-			superuser_do "snap install ${2}"
+			superuser_do "snap install ${2} --classic"
 			# Finished
 			echo_message success "Installation of '${2}' is complete."
 			whiptail --title "Finished" --msgbox "Installation of ${1} is complete." 8 56

@@ -32,7 +32,7 @@ function install_snap_apps {
 				;;
 			install_snap_slack)
 				# install Slack
-				install_snap_package "Slack" "slack --classic" install_snap_apps
+				install_snap_package "Slack" "slack" install_snap_apps
 				;;
 			install_snap_spotify)
 				# install Spotify
