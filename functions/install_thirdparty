@@ -32,6 +32,7 @@ function install_thirdparty {
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		'install_chrome'               'Google Chrome' \
 		'install_commandbox'           'Commandbox' \
+		'install_dbeaver'              'DBeaver' \
 		'install_dropbox'              'Dropbox' \
 		'install_elementary_tweaks'    'Elementary OS Tweaks' \
 		'install_git_legit'            'Git Legit' \
@@ -41,7 +42,8 @@ function install_thirdparty {
 		'install_vscode'               'Visual Studio Code' \
 		'install_oracle_java'          'Oracle Java' \
 		'install_rvm'                  'Ruby Version Manager (RVM)' \
-		'install_sublime_text'         'Sublime Text 3' \
+		'install_vagrant'              'Vagrant' \
+		'install_virtualbox'           'VirtualBox' \
 		3>&1 1>&2 2>&3)
 
 	# check exit status

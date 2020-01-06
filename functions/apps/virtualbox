@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Virtualbox
+function install_virtualbox {
+	sudo add-apt-repository multiverse -y
+	sudo apt-get update
+	sudo apt-get install virtualbox -y
+	whiptail --title "Finished" --msgbox "Installation of Virtualbox complete." 8 56
+	install_thirdparty
+}
