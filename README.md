@@ -3,9 +3,7 @@ Ubuntu Post Install Scripts
 
 A semi-automatic and interactive set of post-installation scripts for Ubuntu and its derivatives. You can use this project to install your favourite apps, set your preferred settings, and do minor housekeeping.
 
-This project is free software; you can redistribute it and/or modify it under the terms of the [GNU General Public License](/LICENSE). If you have improvements, contributions to the [original](https://github.com/snwh/ubuntu-post-install) are much appreciated.
-
-## Organization
+## Organisation
 
 This project is designed to be fairly modular (and not be one huge script) so you can easily delete or exclude bits/functions that you don't want to use.
 
@@ -13,7 +11,7 @@ This project is designed to be fairly modular (and not be one huge script) so yo
  * [`functions`](/functions): the main functions of this scriptset. They should require little user-preference modification.
  * [`apps`](/functions/apps): functions for installing third-party applications. They are called in the [`install_thirdparty`](/functions/install_thirdparty) function.
 
-*<sup>&dagger;</sup>These lists are preferential and you should to update them with packages you prefer*
+*<sup>&dagger;</sup>These lists are preferential and should be updated with the packages you prefer*
 
 ## Adding Functions
 
@@ -21,14 +19,10 @@ Adding additional functions is as easy as editing one of the many already includ
 
 ## Usage
 
-You use these scripts, you can just run the main script from the root of the source folder:
+Run the bootstrapper:
+
+`sh -c "$(curl -fsSL https://gist.githubusercontent.com/chapmandu/c10c1ebca14a90dc8c31ca05f724d1a9/raw/8f980cc20d0ba0e4d41f33d1a35f620272749c98/bootstrap.sh)"`
+
+Once bootstrapped, you can just run the main script from the root of the source folder:
 
     ./ubuntu-post-install-script.sh
-
-Or run the bootstrapper:
-
-`sh -c "$(curl -fsSL https://gist.githubusercontent.com/chapmandu/c10c1ebca14a90dc8c31ca05f724d1a9/raw/738eb597fb60bec41a5993df3526949ee2e7fbaf/bootstrap.sh)"`
-
-Alternatively, if you use `bash` and cloned this to your home folder, add the following to your `.bashrc` to run this script on-demand.
-
-    export PATH=${PATH}:~/ubuntu-post-install/
