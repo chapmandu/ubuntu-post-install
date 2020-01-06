@@ -2,9 +2,11 @@
 
 # Visual Studio Code
 function install_vscode {
-	wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/Downloads/vscode.deb
-	sudo apt install ~/Downloads/vscode.deb
-	rm ~/Downloads/vscode.deb
+	PACKAGE=~/Downloads/vscode.deb
+	if [ ! -f ${PACKAGE} ]; then
+		wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ${PACKAGE}
+	fi
+	sudo apt install ${PACKAGE}
 	code --install-extension Shan.code-settings-sync
 	whiptail --title "Finished" --msgbox "Installation of Visual Studio Code complete." 8 56
 	install_thirdparty
