@@ -25,4 +25,4 @@ Run the bootstrapper:
 
 Once bootstrapped, you can just run the main script from the root of the source folder:
 
-    ./ubuntu-post-install-script.sh
+    ./ubuntu-post-install.sh
