@@ -84,6 +84,47 @@ function write_editorconfig {
 	fi
 }
 
+# Set preferred zsh aliased by copying the 'zsh_aliases.in' file to ~/.zsh_aliases
+function write_zsh_aliases {
+	# Check list
+	INPUT=$(dirname "$0")'/data/config/zsh_aliases.in'
+	# Draw window
+	if (eval `resize` && whiptail \
+		--title "Preferred zsh Aliases" \
+		--yesno "Current list of preferred zsh aliases: \n\n$(while read LINE; do echo "  "$LINE; done < $INPUT) \n\nProceed?" \
+		$LINES $COLUMNS $(( $LINES - 12 )) \
+		--scrolltext) then
+		echo_message info "Setting zsh aliases..."
+		# simply copy the list file to the aliases file
+		cp $INPUT ~/.zsh_aliases
+		echo_message success "zsh aliases set successfully."
+		whiptail --title "Finished" --msgbox "zsh aliases set successfully." 8 56
+		setup_dotfiles
+	else
+		setup_dotfiles
+	fi
+}
+
+# Configure zsh profile by copying the 'zsh.in' file to ~/.zshrc
+function write_zshrc {
+	# Check list
+	INPUT=$(dirname "$0")'/data/config/zshrc.in'
+	# Draw window
+	if (eval `resize` && whiptail \
+		--title "Configure zsh" \
+		--yesno "Custom config file contains the following: \n\n$(while read LINE; do echo "  "$LINE; done < $INPUT) \n\nOverwrite existing config?" \
+		$LINES $COLUMNS $(( $LINES - 12 )) \
+		--scrolltext) then
+		echo_message info "Overwriting ~/.zshrc..."
+		# simply copy the list file to the aliases file
+		cp $INPUT ~/.zshrc
+		echo_message success "zsh successfully configured."
+		whiptail --title "Finished" --msgbox "zsh successfully configured." 8 56
+		setup_dotfiles
+	else
+		setup_dotfiles
+	fi
+}
 
 # Install custom dotfiles
 function setup_dotfiles {
@@ -97,9 +138,11 @@ function setup_dotfiles {
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
 		'write_profile'         'Configure environment variables' \
-		'write_bash_aliases'   'Set custom Bash aliases' \
-		'write_bashrc'         'Set custom Bash preferences' \
-		'write_editorconfig'   'Set custom editor config' \
+		'write_bash_aliases'    'Set custom Bash aliases' \
+		'write_bashrc'          'Set custom Bash preferences' \
+		'write_zsh_aliases'     'Set custom zsh aliases' \
+		'write_zshrc'           'Set custom zsh preferences' \
+		'write_editorconfig'    'Set custom editor config' \
 		3>&1 1>&2 2>&3)
 	# check exit status
 	if [ $? = 0 ]; then
