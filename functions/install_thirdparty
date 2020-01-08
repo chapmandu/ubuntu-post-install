@@ -39,6 +39,7 @@ function install_thirdparty {
 		'install_github_desktop'       'GitHub Desktop' \
 		'install_nvm'                  'Node Version Manager' \
 		'install_ohmyzsh'              'ohmyzsh' \
+    'install_opera'                'Opera' \
 		'install_vscode'               'Visual Studio Code' \
 		'install_oracle_java'          'Oracle Java' \
 		'install_rvm'                  'Ruby Version Manager (RVM)' \
