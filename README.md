@@ -21,7 +21,7 @@ Adding additional functions is as easy as editing one of the many already includ
 
 Run the bootstrapper:
 
-`sh -c "$(curl -fsSL https://gist.githubusercontent.com/chapmandu/c10c1ebca14a90dc8c31ca05f724d1a9/raw/8f980cc20d0ba0e4d41f33d1a35f620272749c98/bootstrap.sh)"`
+`sh -c "$(curl -fsSL https://gist.githubusercontent.com/chapmandu/c10c1ebca14a90dc8c31ca05f724d1a9/raw/394ff2e00cc44886f355fa0f083dfd3a50af1d56/bootstrap.sh)"`
 
 Once bootstrapped, you can just run the main script from the root of the source folder:
 
