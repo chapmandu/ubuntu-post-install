@@ -2,12 +2,13 @@
 
 # Node Version Manager
 function install_nvm {
-	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 	nvm install 12.13.0
 	nvm install 10.16.3
 	nvm install 8.10
+  nvm use 12
 	whiptail --title "Finished" --msgbox "Installation of Node Version Manager complete." 8 56
 	install_thirdparty
 }
