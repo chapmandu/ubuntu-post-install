@@ -8,7 +8,7 @@ function install_nvm {
 	nvm install 12.13.0
 	nvm install 10.16.3
 	nvm install 8.10
-  nvm use 12
+	nvm use 12
 	whiptail --title "Finished" --msgbox "Installation of Node Version Manager complete." 8 56
 	install_thirdparty
 }
