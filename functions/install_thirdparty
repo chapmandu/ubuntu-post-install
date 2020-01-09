@@ -30,6 +30,7 @@ function install_thirdparty {
 		--ok-button "Install" \
 		--cancel-button "Go Back" \
 		$LINES $COLUMNS $(( $LINES - 12 )) \
+		'install_brave'                'Brave Browser' \
 		'install_chrome'               'Google Chrome' \
 		'install_commandbox'           'Commandbox' \
 		'install_dbeaver'              'DBeaver' \

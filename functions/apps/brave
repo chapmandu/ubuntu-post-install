@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# brave
+function install_brave {
+  curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+  superuser_do "sudo rm -f /etc/apt/sources.list.d/brave-browser-release.list"
+  echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+  superuser_do "apt update -y -qq"
+  superuser_do "apt install brave-browser brave-keyring -y"
+  whiptail --title "Finished" --msgbox "Installation of Brave complete." 8 56
+  install_thirdparty
+}
