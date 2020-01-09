@@ -7,12 +7,12 @@ function install_vagrant {
 	if [ ! -f ${PACKAGE} ]; then
 		wget https://releases.hashicorp.com/vagrant/${VERSION}/vagrant_${VERSION}_x86_64.deb -O ${PACKAGE}
 	fi
-	sudo apt install ${PACKAGE}
+	superuser_do "apt install ${PACKAGE}"
 
 	vagrant plugin install vagrant-hostsupdater
 	vagrant plugin install vagrant-vbguest
-	vagrant hostsupdater	
-	whiptail --title "Finished" --msgbox "Installation of Vagrant ${VERSION} and plugins complete." 8 56	
+	vagrant hostsupdater
+	whiptail --title "Finished" --msgbox "Installation of Vagrant ${VERSION} and plugins complete." 8 56
 
 	install_thirdparty
 }
