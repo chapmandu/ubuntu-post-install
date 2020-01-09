@@ -2,8 +2,14 @@
 
 # Elementary Tweaks
 function install_elementary_tweaks {
-	sudo add-apt-repository ppa:philip.scott/elementary-tweaks -y
-	sudo apt-get update
-	sudo apt-get install elementary-tweaks -y
-	install_thirdparty
+  NAME="Elementary Tweaks"
+	PACKAGE="elementary-tweaks"
+	PPA="philip.scott/elementary-tweaks"
+	add_launchpad_ppa "$NAME" "$PPA" install_thirdparty
+	if [ $? = 0 ]; then
+		install_package "$NAME" "$PACKAGE" install_thirdparty
+	else
+		echo_message info "Installation of $NAME cancelled."
+		install_thirdparty
+	fi
 }
