@@ -7,6 +7,6 @@ function install_albert {
   sudo apt-key add - < Release.key
   sudo apt-get update
   sudo apt-get install albert -y
-  whiptail --title "Finished" --msgbox "Installation of Albert for Ubuntu 18.04 complete." 8 56
+  whiptail --title "Finished" --msgbox "Installation of Albert for Ubuntu 19.04 complete." 8 56
   install_thirdparty
 }
