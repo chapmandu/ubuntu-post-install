@@ -9,6 +9,7 @@ org.gnome.mutter center-new-windows true
 org.gnome.nautilus.preferences sort-directories-first true
 org.gnome.Terminal.Legacy.Settings dark-theme true
 org.gnome.Terminal.Legacy.Settings theme-variant 'dark'
+org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 org.gtk.Settings.Debug enable-inspector-keybinding true
 org.pantheon.desktop.gala.appearance button-layout ':close'
 org.pantheon.terminal.settings natural-copy-paste false
