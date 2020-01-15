@@ -125,10 +125,10 @@ cff() {
     echo "rename ${FILENAME}.cfm to ${FILENAME}.cfc"
     mv $CFMPATH $CFCPATH
     echo "cfformatting..."
-    box cfformat $CFCPATH --overwrite
+    box cfformat run $CFCPATH --overwrite
     echo "rename ${FILENAME}.cfc back to ${FILENAME}.cfm"
     mv $CFCPATH $CFMPATH
   else
-    box cfformat $1 --overwrite
+    box cfformat run $1 --overwrite
   fi
 }
