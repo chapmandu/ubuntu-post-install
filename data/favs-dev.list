@@ -2,7 +2,7 @@ autotools-dev
 git
 nodejs
 npm
-docker
+docker.io
 docker-compose
 python3
 python3-pip
