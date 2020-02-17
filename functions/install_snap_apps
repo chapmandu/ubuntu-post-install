@@ -19,6 +19,7 @@ function install_snap_apps {
 			'install_snap_slack'          'Slack' \
 			'install_snap_spotify'        'Spotify' \
 			'install_snap_sublime'        'Sublime Text 3' \
+			'install_snap_postman'        'Postman' \
 			'install_intellij_community'  'IntelliJ IDEA Community' \
 			'install_intellij_ultimate'   'IntelliJ IDEA Ultimate' \
 			3>&1 1>&2 2>&3)
@@ -38,6 +39,9 @@ function install_snap_apps {
 				;;
 			install_snap_sublime)
 				install_snap_package "Sublime Text 3" "sublime-text" install_snap_apps
+				;;
+			install_snap_postman)
+				install_snap_package "Postman" "postman" install_snap_apps
 				;;
 			install_intellij_community)
 				install_snap_package "IntelliJ IDEA Community" "intellij-idea-community" install_snap_apps
