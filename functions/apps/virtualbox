@@ -2,9 +2,9 @@
 
 # Virtualbox
 function install_virtualbox {
-	sudo add-apt-repository multiverse -y
-	sudo apt-get update
-	sudo apt-get install virtualbox -y
+	wget https://download.virtualbox.org/virtualbox/5.2.36/virtualbox-5.2_5.2.36-135684~Ubuntu~bionic_amd64.deb virtualbox.deb
+	sudo dpkg --install virtualbox.deb
+	rm virtualbox.deb
 	whiptail --title "Finished" --msgbox "Installation of Virtualbox complete." 8 56
 	install_thirdparty
 }
