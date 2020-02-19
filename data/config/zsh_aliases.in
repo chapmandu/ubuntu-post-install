@@ -2,8 +2,7 @@ alias upgrade='sudo apt update && apt list --upgradable && sudo apt upgrade -y &
 
 # git shortcouts
 alias st='git status'
-alias pp='git pull --rebase && git push'
-alias sync='git sync'
+alias sync='git pull && git push'
 alias syncall='mas && sync && rel && sync && dev && sync'
 alias dif='git diff'
 alias mas='git checkout master'
