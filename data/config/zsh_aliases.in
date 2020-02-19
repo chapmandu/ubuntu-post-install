@@ -92,18 +92,18 @@ alias sam-api-restart="sam build && sam local start-api --env-vars ../env.json"
 # zsh
 runtests() {
   if (( $# == 0 )) then
-    python3 tests/run_tests.py
+    npm run test:wheels -q
   else
-    python3 tests/run_tests.py -p $1
+    npm run test:wheels -- -p $1 -q
   fi
 }
 
 # bash
 # runtests() {
 #   if [ $1 == "" ]; then
-#     python3 tests/run_tests.py
+#     npm run test:wheels -q
 #   else
-#     python3 tests/run_tests.py -p $1
+#     npm run test:wheels -- -p -q $1
 #   fi
 # }
 
