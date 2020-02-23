@@ -61,13 +61,13 @@ alias vs='vagrant suspend'
 alias vh='vagrant halt'
 
 # docker shortcuts
-alias dcu='docker-compose up -d --build --remove-orphans'
+alias dcu='sudo ./run.sh'
+alias dcd='sudo ./run.sh down'
+alias dcr='sudo ./run.sh down true && sudo ./run.sh' # docker compose reload (soft)
+alias dcrf='sudo ./run.sh down && sudo ./run.sh' # dcrf = docker compose reload full
 alias dcuv='docker-compose up --build --remove-orphans' # verbose
-alias dcr='docker-compose restart'
 alias dcs='docker-compose stop'
-alias dcd='docker-compose down -v'
 alias dcrm='docker-compose rm -v'
-alias dc='docker-compose'
 dcssh() {
   if [ "$1" == "zenu" ]; then
     docker exec -it alcatraz_www.zenu.dv_1 /bin/bash
