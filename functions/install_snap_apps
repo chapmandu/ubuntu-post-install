@@ -19,6 +19,7 @@ function install_snap_apps {
 			'install_intellij_community'  'IntelliJ IDEA Community' \
 			'install_intellij_ultimate'   'IntelliJ IDEA Ultimate' \
 			'install_snap_krita'          'Krita' \
+			'install_snap_remmina'        'Remmina (RDP)' \
 			'install_snap_slack'          'Slack' \
 			'install_snap_spotify'        'Spotify' \
 			'install_snap_sublime'        'Sublime Text 3' \
@@ -41,6 +42,9 @@ function install_snap_apps {
 				;;
 			install_snap_krita)
 				install_snap_package "Krita" "krita" install_snap_apps
+				;;
+			install_snap_remmina)
+				install_snap_package "Remmina (RDP)" "remmina" install_snap_apps
 				;;
 			install_snap_slack)
 				install_snap_package "Slack" "slack" install_snap_apps
