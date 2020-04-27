@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Localstack
+function install_localstack {
+	pip3 install localstack
+	whiptail --title "Finished" --msgbox "Installation of Localstack complete." 8 56
+	install_thirdparty
+}

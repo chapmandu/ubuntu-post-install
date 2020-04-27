@@ -39,6 +39,7 @@ function install_thirdparty {
 		'install_elementary_tweaks'    'Elementary OS Tweaks' \
 		'install_git_legit'            'Git Legit' \
 		'install_github_desktop'       'GitHub Desktop' \
+		'install_localstack'           'Localstack' \
 		'install_nvm'                  'Node Version Manager' \
 		'install_ohmyzsh'              'ohmyzsh' \
 		'install_opera'                'Opera' \
