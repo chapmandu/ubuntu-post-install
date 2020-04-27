@@ -61,10 +61,10 @@ alias vs='vagrant suspend'
 alias vh='vagrant halt'
 
 # docker shortcuts
-alias dcu='sudo ./run.sh'
-alias dcd='sudo ./run.sh down'
-alias dcr='sudo ./run.sh down true && sudo ./run.sh' # docker compose reload (soft)
-alias dcrf='sudo ./run.sh down && sudo ./run.sh' # dcrf = docker compose reload full
+alias dcu='./run.sh'
+alias dcd='./run.sh down'
+alias dcr='./run.sh down true && ./run.sh' # docker compose reload (soft)
+alias dcrf='./run.sh down && ./run.sh' # dcrf = docker compose reload full
 alias dcuv='docker-compose up --build --remove-orphans' # verbose
 alias dcs='docker-compose stop'
 alias dcrm='docker-compose rm -v'
