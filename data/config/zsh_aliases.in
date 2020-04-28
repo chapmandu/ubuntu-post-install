@@ -111,25 +111,8 @@ runtests() {
 alias ded="find . -depth -type d -empty -delete" # delete all empty directories under the current
 
 # cfformat
-alias converttocfm='rename "s/cfc/cfm/" *.cfc'
-alias converttocfc='rename "s/cfm/cfc/" *.cfm'
 cff() {
-  DIR=$(dirname "${1}")
-  FILENAME=$(basename -- "$1")
-  EXTENSION="${FILENAME##*.}"
-  FILENAME="${FILENAME%.*}"
-  if [ $EXTENSION = cfm ]; then
-    CFCPATH="${DIR}/${FILENAME}.cfc"
-    CFMPATH="${DIR}/${FILENAME}.cfm"
-    echo "rename ${FILENAME}.cfm to ${FILENAME}.cfc"
-    mv $CFMPATH $CFCPATH
-    echo "cfformatting..."
-    box cfformat run $CFCPATH --overwrite
-    echo "rename ${FILENAME}.cfc back to ${FILENAME}.cfm"
-    mv $CFCPATH $CFMPATH
-  else
-    box cfformat run $1 --overwrite
-  fi
+  box cfformat run $1 --overwrite --cfm
 }
 
 killbranch() {
