@@ -2,7 +2,7 @@
 
 # Vagrant
 function install_vagrant {
-	VERSION=2.2.6
+	VERSION=2.2.7
 	PACKAGE=~/Downloads/vagrant_${VERSION}_x86_64.deb
 	if [ ! -f ${PACKAGE} ]; then
 		wget https://releases.hashicorp.com/vagrant/${VERSION}/vagrant_${VERSION}_x86_64.deb -O ${PACKAGE}
