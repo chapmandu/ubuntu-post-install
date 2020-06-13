@@ -16,15 +16,12 @@ function install_snap_apps {
 			$LINES $COLUMNS $(( $LINES - 12 )) \
 			'install_snap_atom'           'Atom' \
 			'install_snap_inkscape'       'Inkscape' \
-			'install_intellij_community'  'IntelliJ IDEA Community' \
-			'install_intellij_ultimate'   'IntelliJ IDEA Ultimate' \
-			'install_snap_krita'          'Krita' \
-			'install_snap_remmina'        'Remmina (RDP)' \
 			'install_snap_slack'          'Slack' \
 			'install_snap_spotify'        'Spotify' \
 			'install_snap_sublime'        'Sublime Text 3' \
 			'install_snap_postman'        'Postman' \
-			'install_snap_code'           'Visual Studio Code' \
+			'install_intellij_community'  'IntelliJ IDEA Community' \
+			'install_intellij_ultimate'   'IntelliJ IDEA Ultimate' \
 			3>&1 1>&2 2>&3)
 
 		case "${SNAPS}" in
@@ -33,18 +30,6 @@ function install_snap_apps {
 				;;
 			install_snap_inkscape)
 				install_snap_package "Inkscape" "inkscape" install_snap_apps
-				;;
-			install_intellij_community)
-				install_snap_package "IntelliJ IDEA Community" "intellij-idea-community" install_snap_apps
-				;;
-      install_intellij_ultimate)
-				install_snap_package "IntelliJ IDEA Ultimate" "intellij-idea-ultimate" install_snap_apps
-				;;
-			install_snap_krita)
-				install_snap_package "Krita" "krita" install_snap_apps
-				;;
-			install_snap_remmina)
-				install_snap_package "Remmina (RDP)" "remmina" install_snap_apps
 				;;
 			install_snap_slack)
 				install_snap_package "Slack" "slack" install_snap_apps
@@ -58,8 +43,11 @@ function install_snap_apps {
 			install_snap_postman)
 				install_snap_package "Postman" "postman" install_snap_apps
 				;;
-			install_snap_code)
-				install_snap_package "Visual Studio Code" "code" install_snap_apps
+			install_intellij_community)
+				install_snap_package "IntelliJ IDEA Community" "intellij-idea-community" install_snap_apps
+				;;
+			nstall_intellij_ultimate)
+				install_snap_package "IntelliJ IDEA Ultimate" "intellij-idea-ultimate" install_snap_apps
 				;;
 			*)
 				# cancel
