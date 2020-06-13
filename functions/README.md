@@ -20,7 +20,6 @@ Pretty self-explanatory, all the installation functions.
  * [`install_flatpak_apps`](install_flatpak_apps) is used for installing flatpak apps.
  * [`install_fonts`](install_fonts) is used for installing fonts.
  * [`install_functions`](install_functions) contains generic functions for installing a single package, installing a remote package, installing a list of packages, or installing Snap or Flatpak packages, used throughout the other install scripts. 
- * [`install_gnome`](install_gnome) is used for installing the GNOME desktop and various related software.
  * [`install_snap_apps`](install_snap_apps) is used for installing Snap apps.
  * [`install_thirdparty`](install_thirdparty) checks the [apps](apps) folder for additional installation scripts for third-party apps.
 
