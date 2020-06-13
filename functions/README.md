@@ -29,5 +29,4 @@ Pretty self-explanatory, all the installation functions.
 A few basic maintenance and setup functions
 
  * [`system_cleanup`](system_cleanup) has a few functions for basic cleanup of the system's package management.
- * [`system_configure`](system_configure) contains functions used to a set your preferred settings.
  * [`system_update`](system_update) is used to check for system and app updates.
